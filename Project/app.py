@@ -1,42 +1,35 @@
-import tkinter as tk
-import tkinter.messagebox
-from tkinter.constants import SUNKEN
+def add(n1, n2):
+    return n1 + n2
 
-win = tk.Tk()
-win.title('Calculator')
+def sub(n1, n2):
+    return n1 - n2
 
-frame = tk.Frame(win, bg="skyblue", padx=10)
-frame.pack()
+def mul(n1, n2):
+    return n1 * n2
 
-entry = tk.Entry(frame, relief=SUNKEN, borderwidth=3, width=30)
-entry.grid(row=0, column=0, columnspan=3, ipady=2, pady=2)
+def div(n1, n2):
+    return n1 / n2
 
-def click(num):
-    entry.insert(tk.END, num)
+print("Please select operation -\n"
+      "1. Add\n"
+      "2. Subtract\n"
+      "3. Multiply\n"
+      "4. Divide\n")
 
-def equal():
-    try:
-        res = str(eval(entry.get()))
-        entry.delete(0, tk.END)
-        entry.insert(0, res)
-    except:
-        tk.messagebox.showinfo("Error", "Syntax Error")
+sel = int(input("Select operation (1-4): "))
 
-def clear():
-    entry.delete(0, tk.END)
+n1 = int(input("Enter first number: "))
+n2 = int(input("Enter second number: "))
 
-buttons = [
-    ('1', 1, 0), ('2', 1, 1), ('3', 1, 2),
-    ('4', 2, 0), ('5', 2, 1), ('6', 2, 2),
-    ('7', 3, 0), ('8', 3, 1), ('9', 3, 2),
-    ('0', 4, 1), ('+', 5, 0), ('-', 5, 1),
-    ('*', 5, 2), ('/', 6, 0)
-]
-
-for txt, r, c in buttons:
-    tk.Button(frame, text=txt, padx=15, pady=5, width=3, command=lambda t=txt: click(t)).grid(row=r, column=c, pady=2)
-
-tk.Button(frame, text="Clear", padx=15, pady=5, width=12, command=clear).grid(row=6, column=1, columnspan=2, pady=2)
-tk.Button(frame, text="=", padx=15, pady=5, width=9, command=equal).grid(row=7, column=0, columnspan=3, pady=2)
-
-win.mainloop()
+if sel == 1:
+    print(n1, "+", n2, "=", add(n1, n2))
+elif sel == 2:
+    print(n1, "-", n2, "=", sub(n1, n2))
+elif sel == 3:
+    print(n1, "*", n2, "=", mul(n1, n2))
+elif sel == 4:
+    print(n1, "/", n2, "=", div(n1, n2))
+else:
+    print("Invalid input")
+def adition_by_zero()
+    return 
